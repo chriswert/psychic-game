@@ -26,6 +26,17 @@ var reset = function(){
     guessedLetters = [];
     updateLettersToGuess();
     updateRemainingGuesses();
-    updateCorrectGuesses();
+    updateGuessedLetters();
 };
 
+document.onkeydown = function(event){
+    remainingGuesses--;
+
+    var letter = event.key.toLowerCase();
+
+    guessedLetters.push(letter);
+    
+    updateRemainingGuesses();
+    uppdateGuessedLetters();
+    
+}
