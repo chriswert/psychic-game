@@ -15,17 +15,16 @@ var updateLettersToGuess = function(){
 // Remaining guesses decreases by 1 each time a user presses a key onkeydown. 
 var updateRemainingGuesses = function() {
     document.querySelector(".remaining-guesses").innerHTML = remainingGuesses;
-    // $('.remaing-guesses').text(remaingGuesses); // rough example of jQuery
+   
 }
 
-// This function updates the guessed letters the player has chosen to the class guesses.
+
 // The join is used to keep the letters visible on the screen and is seperated by a comma
-// .join() is an array method that turns an array into a string
-// Example: ['Hello','there'] --> 'Hello there'     .join(' ')
 var updateCorrectGuesses = function() {
     document.querySelector(".guesses").innerHTML = guessedLetters.join(",");
 }
 
+// Reset Variables
 var reset = function(){
     remainingGuesses = 10;
     guessedLetters = [];
@@ -41,6 +40,7 @@ var reset = function(){
 updateLettersToGuess();
 console.log('Letter to guess:', lettersToGuess);
 
+//When user presses key show which key is pressed
 document.onkeydown = function(event){
     remainingGuesses--;
 
@@ -51,11 +51,14 @@ document.onkeydown = function(event){
     updateRemainingGuesses();
     updateCorrectGuesses();
     
+    // If correct letter is pressed, show win and reset the game
     if (letter === lettersToGuess) {
         wins++;
         document.querySelector(".wins").innerHTML = wins;
         reset();
     }
+
+    // If incorrect key is pressed after all tries have occured, show amount of losses and reset game    
         if (remainingGuesses === 0) {
             losses ++;
             document.querySelector(".losses").innerHTML = losses;
