@@ -2,7 +2,7 @@
 var letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 var guessedLetters = [];
 var lettersToGuess = null;
-var remainingGuesses = 9;
+var remainingGuesses = 10;
 var wins = 0;
 var losses = 0;
 
@@ -27,7 +27,7 @@ var updateCorrectGuesses = function() {
 }
 
 var reset = function(){
-    remainingGuesses = 9;
+    remainingGuesses = 10;
     guessedLetters = [];
     updateLettersToGuess();
     updateRemainingGuesses();

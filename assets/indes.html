@@ -10,13 +10,20 @@
 </head>
 <body>
     <h1 class=header>The Psychic Game!</h1>
-    <br>
-    <p>Guess what letter I'm thinking of</p>
-    <br>
-    <p>Wins: <span class="wins">0</span></p>
-    <p>Losses: <span class="losses">0</span></p>
-    <p>Remaining Guesses: <span class="remaining-guesses"></p>
-    <p> Your Guesses: <span class="guesses"></span></p>
+    
+    <p class=statement>Guess what letter I'm thinking of</p>
+
+    <div class=letter-guesses>
+    <p id=guess>Your Guesses: <span class="guesses"></span></p>
+    <p id=remaining>Remaining Guesses: <span class="remaining-guesses"></p>
+    </div>
+
+    <div class=wins-losses>
+    <p id=wins>Wins: <span class="wins">0</span></p>
+    <p id=losses>Losses: <span class="losses">0</span></p>
+    </div>
+    
+    
     
     <script src="javascript/game.js"></script>
 </body>
